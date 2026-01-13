@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bir Mesajım Var 💌</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { color: #d63384; font-size: 22px; margin-bottom: 20px; min-height: 60px; }
+        .gif-container { width: 100%; height: 200px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center; }
+        .gif-container img { max-height: 100%; border-radius: 10px; }
+        .buttons { display: flex; justify-content: center; gap: 15px; }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .primary-btn { background-color: #ff4d6d; color: white; }
+        .secondary-btn { background-color: #6c757d; color: white; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="step1">
+            <div class="gif-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ3bmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/7SF5scGB2AFrO/giphy.gif" alt="Üzgün">
+            </div>
+            <h1>Hala bana birazcık kızgın mısın? 🥺</h1>
+            <div class="buttons">
+                <button class="primary-btn" onclick="nextStep(2)">Evet, biraz...</button>
+                <button class="secondary-btn" onclick="nextStep(2)">Hayır, değilim</button>
+            </div>
+        </div>
+
+        <div id="step2" class="hidden">
+            <div class="gif-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/v1.Y2lkPTc5MGI3NjExbmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/tB8Wl0JvR0f7i/giphy.gif" alt="Düşünen">
+            </div>
+            <h1>Peki, bu dargınlığı bitirip her şeye yeniden başlayabilir miyiz? ✨</h1>
+            <div class="buttons">
+                <button class="primary-btn" onclick="nextStep(3)">Semicenk dinlemek için tıkla ▶️</button>
+            </div>
+        </div>
+
+        <div id="step3" class="hidden">
+            <div class="gif-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/v1.Y2lkPTc5MGI3NjExOHpueGZ3bmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/Ypxp298M1vS7Y0O6Nn/giphy.gif" alt="Tatlı Köpek">
+            </div>
+            <h1>O zaman beni tamamen affediyor musun? ❤️</h1>
+            <div class="buttons">
+                <button class="primary-btn" onclick="celebrate()">Evet!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nextStep(step) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step' + step).classList.remove('hidden');
+        }
+
+        function celebrate() {
+            document.querySelector('.container').innerHTML = `
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/v1.Y2lkPTc5MGI3NjExOHpueGZ3bmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHBybmZ4NjR3eHByJmN0PWc/KzM1lAfJjCW3S3pCHC/giphy.gif" alt="Mutlu">
+                </div>
+                <h1 style="color: #ff4d6d;">Yaşasın! Seni çok seviyorum! 🎉</h1>
+                <p>Şimdi her şey çok daha güzel olacak...</p>
+            `;
+            document.body.style.backgroundColor = "#ffdeeb";
+        }
+    </script>
+
+</body>
+</html>
